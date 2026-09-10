@@ -5,7 +5,6 @@
 /tmp
 /out-tsc
 /bazel-out
-/taskManagement_Server/node_modules
 
 # Node
 /node_modules
