@@ -1,0 +1,8 @@
+<p [ngClass]="{ 'p-class-green': TextColor === 'green', 'p-class-blue': TextColor === 'blue' }">
+  my-first-resusable-componet works! {{ TextColor }}
+</p>
+
+<p [ngStyle]="{ color: isToggle ? 'red' : 'blue' }">ng style! {{ TextColor }}</p>
+<button (click)="SetTextColor('green')">GreenColor</button>
+<button (click)="SetTextColor('blue')">BlueColor</button>
+<button (click)="Toggle()">Toggle</button>

@@ -1,0 +1,26 @@
+<h1>{{ title2 | titlecase }}</h1>
+<app-resusable-componet />
+<app-pipe-ex />
+<p>Price: {{ price | currency: '#' }}</p>
+<p>{{ student | json }}</p>
+<p>{{ currentDate | date: 'dd/MMM/yy' }}</p>
+<p>{{ student.email | customPipe }}</p>
+@if (LoggedIn) {
+  <p>User is logedIn</p>
+} @else {
+  <p>User is not logedIn</p>
+}
+@for (post of posts(); track post) {
+  <p>{{ post.title }}</p>
+  <p>{{ post.body }}</p>
+}
+<!-- <p *ngIf="!LoggedIn">User is not logedIn</p>
+<p *ngIf="LoggedIn">User is logedIn</p>
+@for (list of myData; track list) {
+  <p>{{ list.name }}</p>
+  <p>{{ list.age }}</p>
+} -->
+<!-- <div *ngFor="let mylist of myData">
+  <p>{{ mylist.name }}</p>
+  <p>{{ mylist.age }}</p>
+</div> -->
