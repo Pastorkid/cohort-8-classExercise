@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { UtilityService } from '../Services/utility-service';
 
 @Component({
   selector: 'app-products',
@@ -11,6 +12,7 @@ export class Products implements OnInit {
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
+    private utilityService: UtilityService,
   ) {}
 
   products = [
@@ -51,5 +53,11 @@ export class Products implements OnInit {
         console.log('complete');
       },
     });
+  }
+
+  getFormatedPrice(priceInDollar: string) {
+    const priceInNumber = Number(priceInDollar.replace('$', ''));
+    console.log(priceInNumber);
+    return this.utilityService.resetPriceFormat(priceInNumber);
   }
 }

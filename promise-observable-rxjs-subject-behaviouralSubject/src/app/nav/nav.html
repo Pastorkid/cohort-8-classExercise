@@ -2,9 +2,14 @@
   <h1>My Angular Routing Guide!</h1>
   <nav>
     <ul>
-
       <li routerLink="products"><a>Products</a></li>
       <li routerLink="rxjs-promise-example"><a>Rxjs-Promise-example</a></li>
+      <li routerLink="signal"><a>Signal</a></li>
     </ul>
+    <select (change)="handleSelectionChange($event)">
+      <option value="$">price in $</option>
+      <option value="#">price in #</option>
+      <option value="€">price in €</option>
+    </select>
   </nav>
 </header>

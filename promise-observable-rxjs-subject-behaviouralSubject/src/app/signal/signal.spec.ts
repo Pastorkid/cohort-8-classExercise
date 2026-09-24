@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RxjsPromiseExmaple } from './rxjs-promise-exmaple';
+import { Signal } from './signal';
 
-describe('RxjsPromiseExmaple', () => {
-  let component: RxjsPromiseExmaple;
-  let fixture: ComponentFixture<RxjsPromiseExmaple>;
+describe('Signal', () => {
+  let component: Signal;
+  let fixture: ComponentFixture<Signal>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RxjsPromiseExmaple]
+      imports: [Signal]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RxjsPromiseExmaple);
+    fixture = TestBed.createComponent(Signal);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
