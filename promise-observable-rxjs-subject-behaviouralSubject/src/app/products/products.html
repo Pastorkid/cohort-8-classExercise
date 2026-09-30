@@ -12,8 +12,8 @@
           <span>FormatedPrice: {{ getFormatedPrice(product.productprice).formatedPrice }}</span>
           <span>FormatedCurrency: {{ getFormatedPrice(product.productprice).currency }}</span>
         </div>
-
-        <!-- <button (click)="viewProduct(product.id)">View details</button>
+        <button (click)="addToCart(product)">Add to Cart</button>
+        <button (click)="viewProduct(product.id)">View details</button>
         <button>
           <a
             routerLink="/products"
@@ -24,7 +24,8 @@
             }"
             >QueryProduct</a
           >
-        </button> -->
+        </button>
+        -->
       </div>
     </div>
   }

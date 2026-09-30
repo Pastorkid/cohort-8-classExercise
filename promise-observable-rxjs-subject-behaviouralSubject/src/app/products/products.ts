@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { UtilityService } from '../Services/utility-service';
+import { SignalService } from '../Services/signal-service';
 
 @Component({
   selector: 'app-products',
@@ -13,6 +14,7 @@ export class Products implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private utilityService: UtilityService,
+    private signalService: SignalService,
   ) {}
 
   products = [
@@ -23,6 +25,7 @@ export class Products implements OnInit {
       productImagePath: 'product1.png',
       rating: 4.5,
       category: 'Camera',
+      quantity: 2,
     },
     {
       id: 2,
@@ -30,6 +33,7 @@ export class Products implements OnInit {
       productprice: '$350',
       productImagePath: 'product2.png',
       rating: 4.8,
+      quantity: 2,
       category: 'watch',
     },
   ];
@@ -59,5 +63,10 @@ export class Products implements OnInit {
     const priceInNumber = Number(priceInDollar.replace('$', ''));
     console.log(priceInNumber);
     return this.utilityService.resetPriceFormat(priceInNumber);
+  }
+
+  addToCart(product: Product) {
+    this.signalService.addProduct(product);
+    this.signalService.calculateTotalPrice();
   }
 }
