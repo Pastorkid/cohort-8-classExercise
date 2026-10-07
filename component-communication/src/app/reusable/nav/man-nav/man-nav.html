@@ -1,0 +1,51 @@
+<header
+  [@navContainer]
+  [@stickyHeaderState]="isHeaderStuck ? 'stuck' : 'idle'"
+  class="flex sticky top-0 z-50 flex-col items-start w-full bg-brand-white/80"
+>
+  <!-- missing upper nav -->
+
+  <nav
+    [@mobileNavState]="mobileMenuOpen ? 'open' : 'closed'"
+    @mainNavEnter
+    class="bg-brand-white flex w-full overflow-hidden"
+  >
+    <div class="logo-container-wrapper">
+      <!-- missing out a navLogo -->
+      <img src="yraBrandName.png" alt="yraBrandName" class="h-15 w-68 object-cover object-center" />
+    </div>
+    <ul class="flex nav-links-list" @linkRow>
+      @for (link of navLinks; track link) {
+        <li
+          class="nav-link-item"
+          [@navLink]="link.path"
+          [@navLinkMobile]="mobileMenuOpen ? 'in' : 'out'"
+        >
+          <a
+            [routerLink]="link.path"
+            routerLinkActive="text-brand-teal"
+            [@navLinkTapState]="linkTapState(link.path)"
+            (click)="onLinkTap(link.path)"
+            >{{ link.name }}</a
+          >
+        </li>
+      }
+    </ul>
+    <div class="button-wrapper" @linkRow>
+      <div
+        class="nav-link-item"
+        [@navLink]="'btn-login'"
+        [@navLinkMobile]="mobileMenuOpen ? 'in' : 'out'"
+      >
+        <!-- missing out a button -->
+      </div>
+      <div
+        class="nav-link-item"
+        [@navLink]="'btn-join'"
+        [@navLinkMobile]="mobileMenuOpen ? 'in' : 'out'"
+      >
+        <!-- missing out a button -->
+      </div>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,37 @@
+* {
+  font-family: var(--font-sans);
+  color: var(--color-brand-white);
+}
+
+@media screen and (max-width: 700px) {
+  .holder {
+    height: 70px;
+  }
+  p {
+    display: none;
+  }
+  .harmBugger {
+    font-size: 40px;
+    font-weight: bolder;
+    margin-right: 26px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .holder {
+    height: 35px;
+  }
+  p {
+    font-size: 12px;
+    text-align: center;
+    line-height: 1.55;
+  }
+  p:nth-of-type(1) {
+    margin-left: 26px;
+  }
+  p:nth-of-type(2) {
+    margin-right: 26px;
+  }
+  .harmBugger {
+    display: none;
+  }
+}
