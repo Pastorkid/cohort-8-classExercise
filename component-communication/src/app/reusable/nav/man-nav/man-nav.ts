@@ -1,10 +1,12 @@
 import { Component, HostListener } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { navAnimations } from '../../animation';
+import { UpperNav } from '../upper-nav/upper-nav';
+import { Button } from '../../button/button';
 
 @Component({
   selector: 'app-main-nav',
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, UpperNav, Button],
   templateUrl: './man-nav.html',
   styleUrl: './man-nav.css',
   animations: navAnimations,
@@ -14,6 +16,10 @@ export class MainNav {
   mobileMenuOpen = false;
   isHeaderStuck = false;
   tappedLink = new Map<string, 'idle' | 'tap'>();
+
+  buttonClicked(buttonText: string) {
+    console.log(buttonText, ' i am cliked from main nav componet');
+  }
 
   navLinks = [
     {

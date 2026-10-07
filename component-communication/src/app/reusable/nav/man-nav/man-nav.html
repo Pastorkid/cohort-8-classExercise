@@ -4,6 +4,7 @@
   class="flex sticky top-0 z-50 flex-col items-start w-full bg-brand-white/80"
 >
   <!-- missing upper nav -->
+  <div class="w-full" @upperNavEnter><app-upper-nav [value]="20" /></div>
 
   <nav
     [@mobileNavState]="mobileMenuOpen ? 'open' : 'closed'"
@@ -38,6 +39,7 @@
         [@navLinkMobile]="mobileMenuOpen ? 'in' : 'out'"
       >
         <!-- missing out a button -->
+        <app-button buttonType="white" buttonText="Login" (Navclick)="buttonClicked('Login')" />
       </div>
       <div
         class="nav-link-item"
@@ -45,6 +47,12 @@
         [@navLinkMobile]="mobileMenuOpen ? 'in' : 'out'"
       >
         <!-- missing out a button -->
+
+        <app-button
+          buttonType="orange"
+          buttonText="Join Yra"
+          (Navclick)="buttonClicked('Join Yra')"
+        />
       </div>
     </div>
   </nav>
