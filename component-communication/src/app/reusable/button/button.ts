@@ -1,16 +1,22 @@
 import { NgClass } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-function tranformToUpperCase(value: string) {
-  return value.toUpperCase();
-}
+import { Component, EventEmitter, Input, OnInit, Output, input, output } from '@angular/core';
+
 @Component({
   selector: 'app-button',
   imports: [NgClass],
   templateUrl: './button.html',
   styleUrl: './button.css',
 })
-export class Button {
-  @Input() buttonType = '';
-  @Input({ transform: tranformToUpperCase }) buttonText = 'click me';
-  @Output() Navclick = new EventEmitter<void>();
+export class Button implements OnInit {
+  buttonType = input.required<string>();
+  buttonText = input.required<string>();
+  Navclick = output<void>();
+  // @Output() Navclick = new EventEmitter<void>();
+
+  onNavClick() {
+    this.Navclick.emit();
+  }
+  ngOnInit(): void {
+    console.log(this.buttonText());
+  }
 }

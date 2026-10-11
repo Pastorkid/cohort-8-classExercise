@@ -39,7 +39,7 @@
         [@navLinkMobile]="mobileMenuOpen ? 'in' : 'out'"
       >
         <!-- missing out a button -->
-        <app-button buttonType="white" buttonText="Login" (Navclick)="buttonClicked('Login')" />
+        <app-button buttonType="white" buttonText="Login" (Navclick)="navigateTolign()" />
       </div>
       <div
         class="nav-link-item"
@@ -51,7 +51,7 @@
         <app-button
           buttonType="orange"
           buttonText="Join Yra"
-          (Navclick)="buttonClicked('Join Yra')"
+          (Navclick)="clickChildButton('join Yra')"
         />
       </div>
     </div>

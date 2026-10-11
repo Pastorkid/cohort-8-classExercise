@@ -1,8 +1,9 @@
 <button
   [ngClass]="{
-    whiteBgButton: buttonType === 'white',
-    orangeButton: buttonType === 'orange',
+    whiteBgButton: buttonType() === 'white',
+    orangeButton: buttonType() === 'orange',
   }"
+  (click)="onNavClick()"
 >
-  {{ buttonText }}
+  {{ buttonText() }}
 </button>

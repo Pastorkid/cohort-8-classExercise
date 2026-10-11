@@ -70,4 +70,15 @@ export class MainNav {
   onWindowScroll() {
     this.isHeaderStuck = window.scrollY > 4;
   }
+
+  navigateTolign() {
+    this.router.navigate(['/login']);
+  }
+  navigateToSignup() {
+    this.router.navigate(['/signup']);
+  }
+  clickChildButton(buttonType: string) {
+    //programtic navigation
+    console.log(buttonType, 'i am clicked from main nav componet');
+  }
 }
