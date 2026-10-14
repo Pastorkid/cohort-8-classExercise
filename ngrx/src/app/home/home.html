@@ -1,1 +1,15 @@
-<p>home works!</p>
+<div class="home-wrapper">
+  <h1>App Count {{ counter }}</h1>
+  <div class="button-wrapper">
+    <button (click)="increment()">Increment</button>
+    <button (click)="decrement()">Decrement</button>
+    <button (click)="reset()">Reset</button>
+  </div>
+  <div class="shared-container">
+    <hr />
+    <div class="shared-componets-wrapper">
+      <app-home-user />
+      <app-home-admin />
+    </div>
+  </div>
+</div>
