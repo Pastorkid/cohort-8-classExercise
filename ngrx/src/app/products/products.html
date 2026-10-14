@@ -1,0 +1,34 @@
+<h2>Product Componet</h2>
+<div class="product-wrapper">
+  @for (product of products; track product) {
+    <div class="products-list">
+      <div class="individual-product">
+        <img [src]="`${product.productImagePath}`" alt="product1" />
+        <div class="product-details">
+          <span>ProductName: {{ product.productName }}</span>
+          <span>Price: {{ product.productPrice }}</span>
+          <span>Category: {{ product.category }}</span>
+          <span>Rating: {{ product.rating }}</span>
+
+          <span>quantity: {{ product.quantity }}</span>
+        </div>
+        <!-- Route params with routerLink -->
+        <!-- <button><a [routerLink]="['/product-details', product.id]">View details</a></button> -->
+        <!-- route params with navigate()methods -->
+        <!-- <button (click)="viewDetails(product.id)">View details</button> -->
+
+        <!-- query parameter with routerLink -->
+        <!-- <button>
+          <a
+            routerLink="/products"
+            [queryParams]="{ category: product.category, sort: 'productPrice' }"
+            >Query product</a
+          >
+        </button> -->
+
+        <!-- query parameter with navigate -->
+        <!-- <button (click)="queryProduct(product.category, 'ProductPrice')">Query product</button> -->
+      </div>
+    </div>
+  }
+</div>
