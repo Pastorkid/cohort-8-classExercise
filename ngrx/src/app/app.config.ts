@@ -6,6 +6,8 @@ import { provideEffects } from '@ngrx/effects';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { empReducer } from './AppState/employer/employer.reducer';
 import { counterReducer } from './AppState/counter/counter.reducer';
+import { todoReducer } from './AppState/todo/todo.reducer';
+import { todoEffects } from './AppState/todo/todo.effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -14,8 +16,9 @@ export const appConfig: ApplicationConfig = {
     provideStore({
       employer: empReducer,
       counter: counterReducer,
+      todos: todoReducer,
     }),
-    provideEffects(),
+    provideEffects([todoEffects]),
     provideStoreDevtools({
       maxAge: 25,
       logOnly: false,

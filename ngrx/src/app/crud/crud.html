@@ -1,0 +1,8 @@
+<ul>
+  @for (todo of todoData$ | async; track todo) {
+    <li>{{ todo.title }}</li>
+    <li>{{ todo.completed }}</li>
+    <li>{{ todo.id }}</li>
+    <li>{{ todo.userId }}</li>
+  }
+</ul>

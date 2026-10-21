@@ -1,10 +1,11 @@
 <div class="home-wrapper">
-  <h1>App Count {{ counter }}</h1>
+  <h1>App Count {{ counter$ | async }}</h1>
   <div class="button-wrapper">
     <button (click)="increment()">Increment</button>
     <button (click)="decrement()">Decrement</button>
     <button (click)="reset()">Reset</button>
   </div>
+  <div class="custom-counter-wrapper"><app-custom-counter /></div>
   <div class="shared-container">
     <hr />
     <div class="shared-componets-wrapper">
