@@ -1,0 +1,42 @@
+.dashboard-wrapper {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+aside {
+  height: 100vh;
+  width: 200px;
+  background-color: #0d6efd;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  display: flex;
+  position: fixed;
+}
+
+.child-router {
+  margin-left: 250px;
+  margin-top: 30px;
+}
+nav,
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+nav {
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 30px;
+}
+ul {
+  gap: 20px;
+  list-style: none;
+}
+li a {
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
