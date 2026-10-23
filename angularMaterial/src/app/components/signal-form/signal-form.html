@@ -1,4 +1,8 @@
 <form (submit)="onSubmit($event)">
+  @if (isProcessingLoggingIn()) {
+    <div class="spinner-wrapper"><mat-spinner diameter="48" strokeWidth="4"></mat-spinner></div>
+  }
+
   <div>
     <label
       >Email:
@@ -25,5 +29,5 @@
       </ul>
     }
   </div>
-  <button type="submit" [disabled]="loginForm().invalid()">Login</button>
+  <button type="submit" [disabled]="loginForm().invalid() || isProcessingLoggingIn()">Login</button>
 </form>

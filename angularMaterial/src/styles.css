@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+.snackbar-error {
+  --mat-snack-bar-container-color: #b3261e;
+  --mat-snack-bar-button-color: #ffffff;
+  --mat-snack-bar-supporting-text-color: #ffffff;
+}
+
+.snackbar-success {
+  --mat-snack-bar-container-color: #2e7d32;
+  --mat-snack-bar-button-color: #ffffff;
+  --mat-snack-bar-supporting-text-color: #ffffff;
+}
+
+/* color is the one spinner token that is safe to override from CSS */
+.spinner-wrapper mat-spinner {
+  --mat-progress-spinner-active-indicator-color: #4285f4;
+}
+/* You can add global styles to this file, and also import other style files */

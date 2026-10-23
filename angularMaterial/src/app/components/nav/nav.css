@@ -47,3 +47,21 @@ input {
   border-radius: 5px;
   border: 0;
 }
+button {
+  height: 30px;
+  width: 80px;
+  border-radius: 5px;
+  border: 0;
+  background-color: white;
+  color: #0d6efd;
+  cursor: pointer;
+  margin-right: 30px;
+  position: relative;
+}
+
+.spinner-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

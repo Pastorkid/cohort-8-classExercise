@@ -9,6 +9,7 @@ form {
     system-ui,
     -apple-system,
     sans-serif;
+  position: relative;
 }
 
 div {
@@ -67,4 +68,11 @@ button:active {
 
 .error-list li {
   margin: 0;
+}
+
+.spinner-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

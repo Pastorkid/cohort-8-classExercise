@@ -7,5 +7,12 @@
         <a routerLink="/">Home</a>
       </li>
     </ul>
+    <button (click)="logOut()" [disabled]="isProcessingLoggingOut()">
+      @if (isProcessingLoggingOut()) {
+        <div class="spinner-wrapper"><mat-spinner diameter="28" strokeWidth="2"></mat-spinner></div>
+      } @else {
+        Logout
+      }
+    </button>
   </nav>
 </header>
