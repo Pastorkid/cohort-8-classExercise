@@ -17,20 +17,32 @@ import { dashboardMatchGuard } from './guards/dashboard-match-guard';
 export const routes: Routes = [
   { path: '', component: Home },
   { path: 'about', component: About },
-  { path: 'contact', component: Contact, canDeactivate: [unsavedChangesGuard] },
-  { path: 'products', component: Products, canActivate: [authGuard] },
+  {
+    path: 'contact',
+    loadComponent: () => import('./contact/contact').then((c) => c.Contact),
+    //  component: Contact,
+    canDeactivate: [unsavedChangesGuard],
+  },
+  {
+    path: 'products',
+    //  component: Products,
+    loadComponent: () => import('./products/products').then((c) => c.Products),
+    canActivate: [authGuard],
+  },
   { path: 'product-details/:id', component: ProductDetails },
   { path: 'login', component: Login },
   {
     path: 'dashboard',
-    component: Dashboard,
+    loadChildren: () => import('./dashboard/dashboard.routes').then((c) => c.DASHBOARD_ROUTES),
+    // loadComponent: () => import('./dashboard/dashboard').then((c) => c.Dashboard),
+    // component: Dashboard,
     canMatch: [dashboardMatchGuard],
     canActivateChild: [dashChildGuard],
-    children: [
-      { path: '', redirectTo: 'profile', pathMatch: 'full' },
-      { path: 'dashboardHome', component: DashboardHome },
-      { path: 'profile', component: Profile },
-      { path: 'settings', component: Settings },
-    ],
+    // children: [
+    //   { path: '', redirectTo: 'profile', pathMatch: 'full' },
+    //   { path: 'dashboardHome', component: DashboardHome },
+    //   { path: 'profile', component: Profile },
+    //   { path: 'settings', component: Settings },
+    // ],
   },
 ];

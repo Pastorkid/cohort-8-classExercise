@@ -4,6 +4,9 @@ import { PreloadAllModules, provideRouter, withPreloading } from '@angular/route
 import { routes } from './app.routes';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarConfig } from '@angular/material/snack-bar';
+import { authInterceptor } from './interceptors/auth-interceptor';
+import { errorInterceptor } from './interceptors/error-interceptor';
+import { loggingInterceptor } from './interceptors/logging-interceptor';
 
 const snackBarDefaults: MatSnackBarConfig = {
   duration: 4500,
@@ -16,7 +19,7 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes, withPreloading(PreloadAllModules)),
-    provideHttpClient(),
+    provideHttpClient(withInterceptors([authInterceptor, errorInterceptor, loggingInterceptor])),
     { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: snackBarDefaults },
   ],
 };
