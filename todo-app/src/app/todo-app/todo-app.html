@@ -1,0 +1,63 @@
+<div class="todo">
+  <div class="todo-head">
+    <div>
+      <h1>Advance ToDo App</h1>
+      <div>Advanced Fitness & Routine Management App with Data Persistence ⭐</div>
+    </div>
+  </div>
+  <div class="task-parent-container">
+    <div class="text-area-wrapper">
+      <textarea [(ngModel)]="taskName" placeholder="Add a new task"></textarea>
+      <div class="inputs-wapper">
+        <input type="date" [(ngModel)]="dueDate" />
+        <div class="input-2-container">
+          <input
+            type="text"
+            [(ngModel)]="tagsRaw"
+            placeholder="Enter Comma Seperated tags (Health, Fitness, Default)"
+          />
+          <button
+            class="add-task-btn"
+            [disabled]="isCreating"
+            [ngClass]="{ 'is-loading': isCreating }"
+            (click)="addTask()"
+          >
+            @if (isCreating) {
+              <span class="spinner"></span>
+              <span class="btn-label">Processing…</span>
+            } @else {
+              <span class="btn-label">Add Task</span>
+            }
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <p>{{ tasks() | json }}</p> -->
+  <div class="taskList-table">
+    <table>
+      <thead>
+        <tr>
+          <th class="t-th t-th--index"><strong>Index</strong></th>
+          <th class="t-th t-th--taskName"><strong>Task Name</strong></th>
+          <th class="t-th t-th--dueDate"><strong>Due Date</strong></th>
+          <th class="t-th t-th--tags text-center"><strong>Tags</strong></th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of tasks(); track item.id) {
+          <tr class="t-row">
+            <td class="t-td">{{ $index + 1 }}</td>
+            <td class="t-td">
+              <div><input type="checkbox" />{{ item.taskName }}</div>
+              <button class="row-delete-btn" type="button" (click)="removeTask(item.id)">X</button>
+            </td>
+            <td class="t-td">{{ item.dueDate | date: 'dd/MM/yyyy' }}</td>
+            <td class="t-td">{{ item.tags.join(', ') }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

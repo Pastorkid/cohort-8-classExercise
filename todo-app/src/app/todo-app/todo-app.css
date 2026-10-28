@@ -1,0 +1,320 @@
+* {
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    'Noto Sans',
+    'Liberation Sans',
+    Arial,
+    sans-serif;
+}
+
+.todo,
+.todo-head,
+.todo-head div,
+.task-parent-container,
+.inputs-wapper,
+.taskList-table {
+  display: flex;
+  flex-direction: column;
+}
+.todo {
+  margin-top: 50px;
+  align-items: flex-start;
+  width: 85%;
+  margin-left: 7.5%;
+  margin-right: 7.5%;
+  justify-content: center;
+}
+.todo-head,
+.todo-head div {
+  align-items: center;
+  justify-content: center;
+}
+
+.todo-head {
+  height: 150px;
+  width: 100%;
+  background-color: #0d6efd;
+  border-radius: 12px;
+}
+.todo-head div {
+  height: 100%;
+  width: 100%;
+}
+.todo-head h1,
+.todo-head div {
+  display: inline-block;
+  color: white;
+  text-align: center;
+}
+.task-parent-container {
+  margin-top: 5px;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: center;
+}
+.text-area-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  width: 100%;
+  height: 100px;
+}
+textarea,
+input {
+  outline: none;
+  background-color: #fff;
+  border: 2px solid #6c757d;
+  outline: none;
+}
+textarea {
+  width: 69%;
+  height: 100%;
+  border-radius: 8px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+input[type='date'] {
+  width: 120px;
+}
+
+input {
+  width: 200px;
+  border-radius: 4px;
+  height: 35px;
+  font-weight: 400;
+  font-style: normal;
+}
+input::placeholder {
+  color: #6c757d;
+  font-size: 14px;
+}
+
+input::-webkit-datetime-edit {
+  color: #6c757d;
+}
+.inputs-wapper {
+  height: 100%;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 5px;
+}
+.input-2-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.input-2-container button {
+  padding-left: 14px;
+  padding-right: 14px;
+  border-radius: 5px;
+}
+.input-2-container button {
+  margin-left: 10px;
+  background-color: #198754;
+  border-color: #198754;
+  color: #fff;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  cursor: pointer;
+}
+
+.taskList-table {
+  margin-top: 40px;
+  width: 100%;
+}
+
+table,
+.t-th,
+.t-td {
+  border-collapse: collapse;
+  box-sizing: border-box;
+}
+
+table {
+  width: 100%;
+  color: #6c757d;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid #dee2e6;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.t-th {
+  color: black;
+}
+.t-th,
+.t-td {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.4;
+  border-bottom: 1px solid #dee2e6;
+  border-right: 1px solid #dee2e6;
+}
+
+.t-th:last-child,
+.t-td:last-child {
+  border-right: none;
+}
+
+.t-th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  font-size: 12px;
+}
+
+.t-th--index,
+.t-td:nth-child(1) {
+  width: 6%;
+}
+.t-th--taskName,
+.t-td:nth-child(2) {
+  width: 50%;
+}
+.t-td:nth-child(2) {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+}
+.t-td:nth-child(2) div,
+.t-td:nth-child(2) button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.t-td:nth-child(2) button {
+  height: 28px;
+  width: 28px;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 10px;
+  outline: none;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #dc2626;
+  font-weight: 700;
+  background-color: #fef2f2;
+  transition:
+    background-color 0.15s ease,
+    opacity 0.15s ease,
+    color 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.t-td:nth-child(2) button:hover:not(:disabled) {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.t-td:nth-child(2) button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.t-th--dueDate,
+.t-td:nth-child(3) {
+  width: 10%;
+}
+.t-th--tags,
+.t-td:nth-child(4) {
+  width: 22%;
+}
+.t-th--done,
+.t-td:nth-child(5) {
+  width: 12%;
+}
+
+.t-td:nth-child(1) {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.t-td:nth-child(2) {
+  font-weight: 500;
+}
+.t-td:nth-child(3) {
+  white-space: nowrap;
+}
+.t-td:nth-child(4) {
+  text-align: center;
+  font-weight: 500;
+}
+
+.t-row:nth-child(odd) {
+  background-color: #ffffff;
+}
+.t-row:nth-child(even) {
+  background-color: #f8fafc;
+}
+.t-row {
+  cursor: pointer;
+}
+.t-row:hover {
+  background-color: #eef4ff;
+  transition: background-color 0.15s ease;
+}
+
+.text-center {
+  text-align: center;
+}
+
+input[type='checkbox'] {
+  width: 60px !important;
+  height: 15px !important;
+  cursor: pointer;
+}
+
+.add-task-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 110px;
+  transition:
+    opacity 0.15s ease,
+    background-color 0.15s ease,
+    transform 0.05s ease;
+}
+
+.add-task-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+.add-task-btn.is-loading .btn-label {
+  letter-spacing: 0.2px;
+}
+
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
